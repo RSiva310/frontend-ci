@@ -8,8 +8,8 @@ describe('AboutView', () => {
     expect(wrapper.exists()).toBe(true)
   })
 
-  it('renders main element', () => {
+  it('renders about div element', () => {
     const wrapper = mount(AboutView)
-    expect(wrapper.find('main').exists()).toBe(true)
+    expect(wrapper.find('.about').exists()).toBe(true)
   })
 })

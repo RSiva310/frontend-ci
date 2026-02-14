@@ -36,7 +36,7 @@ describe('TheWelcome', () => {
 
   it('renders Support section with heading', () => {
     const wrapper = mount(TheWelcome)
-    expect(wrapper.text()).toContain('Help us keep Vue thriving')
+    expect(wrapper.text()).toContain('Support Vue')
   })
 
   it('contains external links', () => {

@@ -21,6 +21,6 @@ describe('IconTooling', () => {
 
   it('uses currentColor for fill', () => {
     const wrapper = mount(IconTooling)
-    expect(wrapper.find('svg').attributes('fill')).toBe('currentColor')
+    expect(wrapper.find('path').attributes('fill')).toBe('currentColor')
   })
 })
