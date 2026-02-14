@@ -1,12 +1,17 @@
 pipeline {
-    agent {
-        docker {
-            image 'node:20'
-            args '-u root'
-        }
+    agent any
+
+    tools {
+        nodejs "NodeJS_20"
     }
 
     stages {
+
+        stage('Checkout Code') {
+            steps {
+                checkout scm
+            }
+        }
 
         stage('Install') {
             steps {
