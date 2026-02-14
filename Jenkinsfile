@@ -1,37 +1,32 @@
 pipeline {
-    agent any
-
-    tools {
-        nodejs "NodeJS_20"
+    agent {
+        docker {
+            image 'node:20'
+            args '-u root'
+        }
     }
 
     stages {
 
-        stage('Checkout Code') {
-            steps {
-                checkout scm
-            }
-        }
-
-        stage('Install Dependencies') {
+        stage('Install') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Run Lint') {
+        stage('Lint') {
             steps {
                 sh 'npm run lint'
             }
         }
 
-        stage('Run Tests') {
+        stage('Test') {
             steps {
                 sh 'npm run test:unit'
             }
         }
 
-        stage('Build App') {
+        stage('Build') {
             steps {
                 sh 'npm run build'
             }
