@@ -13,25 +13,25 @@ pipeline {
             }
         }
 
-        stage('Install') {
+        stage('Install Deependencies') {
             steps {
                 sh 'npm install'
             }
         }
 
-        stage('Lint') {
+        stage('Lint Code') {
             steps {
                 sh 'npm run lint'
             }
         }
 
-        stage('Test') {
+        stage('Test Code') {
             steps {
                 sh 'npm run test:unit'
             }
         }
 
-        stage('Build') {
+        stage('Build Project') {
             steps {
                 sh 'npm run build'
             }
